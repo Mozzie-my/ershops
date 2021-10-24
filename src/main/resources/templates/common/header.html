@@ -1,0 +1,83 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="Common_header">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>校园二手交易平台</title>
+    <link rel="stylesheet" href="index/css/public.css">
+    <link rel="stylesheet" href="index/css/header.css">
+</head>
+<body>
+<div id="header">
+    <div class="wrapper">
+        <div class="menu_bar">
+            <div class="menu_left">
+                <a href="/" class="menu_logo">校园二手交易平台</a>
+                <ul>
+                    <li><a href="/" class="item">首页</a></li>
+                    <li>
+                        <a href="/carts" class="item">购物车</a>
+                    </li>
+                </ul>
+            </div>
+            <div th:if="${session.User == null}" class="menu_right">
+                <div class="login_reg">
+                    <a href="/login" class="login btn">
+                        <span>登录</span>
+                    </a>
+                    <a href="/register" class="register btn rbtn">
+                        <span>注册</span>
+                    </a>
+                </div>
+            </div>
+            <div th:if="${session.User != null}"  class="menu_right">
+                <div class="login_reg">
+                    <span class="item" th:text="'欢迎用户：'+${session.User.username}" style="color: white;text-align: center"></span>
+
+                    <a href="/userback" class="register btn rbtn">
+                        <span>进入后台</span>
+                    </a>
+                </div>
+            </div>
+            <div class="menu_center">
+                <div class="center_input">
+                    <input type="text" class="search" placeholder="请输入要搜索的内容">
+                    <a href="javascript:;" class="search_btn">搜索</a>
+                </div>
+                <div class="menu_wrap">
+                        <p>自行车</p>
+                        <p>Apple Watch</p>
+                        <p>华为手机</p>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="alert fade">
+        <span class="close">×</span>
+        <div class="text">
+            <h2>密码登录</h2>
+            <a href="register.html" class="text_r">注册</a>
+            <h3>用户名：</h3><input type="text" placeholder="手机号/邮箱">
+            <h3>密&nbsp;&nbsp;&nbsp;&nbsp;码：</h3></h3><input type="password">
+            <a href="javascript:;" class="text_login">登录</a>
+            <ul class="text_ul">
+            </ul>
+            <div class="text_help">
+                <a· href="javascript:;">忘记密码</a>
+                <a href="javascript:;">请求帮助</a>
+            </div>
+        </div>
+    </div>
+</div> 
+<script src="index/js/jquery-1.11.3.js"></script>
+<script>
+//按登录弹出框
+$("a.login").click(function(){
+    $("div.alert").addClass("in");
+})
+$("span.close").click(function(){
+    $(this).parent().removeClass("in");
+})
+</script>
+</body>
+</html>

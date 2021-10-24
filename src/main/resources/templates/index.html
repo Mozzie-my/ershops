@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>大学生都在用的校园二手网</title>
+    <link rel="stylesheet" href="index/css/public.css">
+    <link rel="stylesheet" href="index/css/index.css">
+    <link rel="stylesheet" href="index/css/header.css">
+
+    <link rel="stylesheet" href="index/vendor/bootstrap/css/bootstrap.min.css">
+    <!-- owl carousel-->
+    <link rel="stylesheet" href="index/vendor/owl.carousel/assets/owl.carousel.css">
+    <link rel="stylesheet" href="index/vendor/owl.carousel/assets/owl.theme.default.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="index/css/style.default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="index/css/custom.css">
+</head>
+<body>
+<header th:replace="common/header">
+</header>
+<link href="../templates/header.html">
+<div class="main" style="margin-top: 48px">
+    <div class="banner_wrap">
+        <div class="main_wrap">
+            <div class="usercard_wrap">
+                <div class="unlogin">
+                    <img class="icon" src="index/img/user.png" alt="">
+                    <div class="btn_wrap">
+                        <a href="/login" class="login_btn login">登录</a>
+                        <a href="/register" class="register_btn register">免费注册</a>
+                    </div>  
+                </div>
+            </div>
+            <img src="index/img/logo.jpg" class="banner_wrap">
+        </div>
+    </div>
+    <div class="slodbar_wrap">
+        <div class="slodbar_item">
+            <img src="index/img/item1.png" alt="" class="icon">
+            <div class="desc">
+                <p class="name">多余宝贝挂卖</p>
+                <p class="cont">有多余的宝贝挂卖，反正闲着也是闲着~</p>
+            </div>
+        </div>
+        <div class="slodbar_item">
+            <img src="index/img/item1.png" alt="" class="icon">
+            <div class="desc">
+                <p class="name">发布多余宝贝</p>
+                <p class="cont">隔壁的同学也在用有鱼，快速出手先卖先得~</p>
+            </div>
+        </div>
+    </div>
+    <div class="tabbar_wrap">
+        <div class="item">
+            <a href="#d1" class="name">新发宝贝</a>
+        </div>
+        <div class="item">
+            <a href="#d3" class="name">周围出租</a>
+        </div>
+        <div class="item">
+            <a href="#d3" class="name">周边美食</a>
+        </div>
+        <div class="item">
+            <a href="#d3" class="name">电子宝贝</a>
+        </div>
+        <div class="item">
+            <a href="#d3" class="name">猜你需要</a>
+        </div>
+        <div class="item">
+            <a href="#d3" class="name">宝贝推荐</a>
+        </div>
+        <div class="item">
+            <a href="#d3" class="name">校园动态</a>
+        </div>
+    </div>
+        <div class="item_list">
+
+            <!--   *** SIDEBAR END ***  -->
+            <!--   *** PORTFOLIO ***-->
+            <div class="col-md-8 col-lg-9 content-column">
+                <div class="grid row">
+                    <!-- start -->
+                    <div id="d5" class="col-md-6 col-lg-3 grid-item" th:each="goods:${goodsPage.records}">
+                    <div class="box-masonry"> <a th:href="@{/goods(id=${goods.id})}" title="" th:class="${goods.endTime.length() == 0} ? 'box-masonry-image with-hover-overlay with-hover-icon':'box-masonry-image with-hover-overlay with-no-hover-icon'">
+                            <img th:src="${imagelist.get(goods.id+'')}" alt="" class="img-fluid"></a>
+                            <div class="box-masonry-text">
+                                <h4> <a th:href="@{goods(${goods.id})}"  th:text="${goods.name}">Name of the work 3</a></h4>
+                                <div class="box-masonry-desription">
+                                    <p th:text="${'￥'+goods.realPrice}">Fifth abundantly made Give sixth hath. Cattle creature i be don't them.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end -->
+                </div>
+            </div>
+<!--dddddddddddddddddddddddddddddddddddddddddddddddddd-->
+<!--        <div th:each="goods:${goodsPage.records}" id="d6" class="item_list_wrap">-->
+<!--            &lt;!&ndash;   *** PORTFOLIO ***&ndash;&gt;-->
+<!--            <a target="_blank" class="item_wrap" th:href="@{/goods(id=${goods.id})}">-->
+<!--                <div style="background-image: url(http://img.alicdn.com/bao/uploaded/i3/O1CN011ztAlk29aWL0lmaH2_!!0-fleamarket.jpg);" class="item_img"></div>-->
+<!--                <div class="item_info">-->
+<!--                    <p class="item_title" th:text="${goods.name}">美国代购mk杨幂同款女包whitney麂皮铆钉链条包单肩斜挎包信封包</p>-->
+<!--                    <div class="price_line">-->
+<!--                        <p class="price_unit">￥</p>-->
+<!--                        <p class="price_value" th:text="${goods.realPrice}">100</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="user_line">-->
+<!--                    <div class="user_info">-->
+<!--                        <img src="http://img.alicdn.com/bao/uploaded/i2/O1CN01OlvKLp1osHkASG5HR_!!0-mytaobao.jpg" alt="" class="usericon">-->
+<!--                        <p class="user_name">t***4</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </a>-->
+<!--        </div>-->
+    </div>
+    <div class="page_icon">
+        <span class="page_disabled">上一页</span>
+        <span class="page_current">1</span>
+        <a href="javascript:;">2</a>
+        <a href="javascript:;">3</a>
+        <a href="javascript:;">4</a>
+        <a href="javascript:;">5</a>
+        ......
+        <a href="javascript:;" class="page_next">下一页</a>
+    </div>
+</div>
+<footer th:replace="common/footer">
+
+</footer>
+
+
+
+<!-- JavaScript文件 -->
+
+<script src="index/vendor/jquery/masonry.min.js"></script>
+<script src="index/vendor/jquery/jquery.min.js"></script>
+<script src="index/vendor/popper.js/umd/popper.min.js"> </script>
+<script src="index/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="index/vendor/jquery.cookie/jquery.cookie.js"> </script>
+<script src="index/vendor/owl.carousel/owl.carousel.min.js"></script>
+<script src="index/js/front.js"></script>
+</body>
+</html>

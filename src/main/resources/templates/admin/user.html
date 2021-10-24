@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="res/css/amazeui.min.css" />
+		<link rel="stylesheet" href="res/css/admin.css" />
+	</head>
+
+	<body>
+		<div class="admin-content-body">
+			<div class="am-cf am-padding am-padding-bottom-0">
+				<div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">用户信息管理</strong><small></small></div>
+			</div>
+
+			<hr>
+
+			<div class="am-g">
+				<div class="am-u-sm-12 am-u-md-6">
+					<div class="am-btn-toolbar">
+						<div class="am-btn-group am-btn-group-xs">
+							<button type="button" class="am-btn am-btn-default"><span class="am-icon-plus"></span> 新增</button>           <!--这是新增按钮-->
+						</div>
+					</div>
+				</div>
+				<div class="am-u-sm-12 am-u-md-3">
+
+				</div>
+				<div class="am-u-sm-12 am-u-md-3">
+					<div class="am-input-group am-input-group-sm">
+						<input type="text" class="am-form-field">
+						<span class="am-input-group-btn">
+            <button class="am-btn am-btn-default" type="button">搜索</button>   <!--这是搜索按钮-->
+          </span>
+					</div>
+				</div>
+			</div>
+			<div class="am-g">
+				<div class="am-u-sm-12">
+					<form class="am-form">
+						<table class="am-table am-table-striped am-table-hover table-main">
+							<thead>
+								<tr>
+									<th class="table-check"><input type="checkbox"></th>
+									<th class="table-id">#</th>       <!--这是#标签-->
+									<th class="table-id">ID</th>       <!--这是ID标签-->
+									<th class="table-nickname">用户名</th>  <!--这是用户名标签-->
+									<th class="table-qq">qq</th>     <!--这是qq标签-->
+									<th class="table-phone">电话</th>   <!--这是电话标签-->
+									<th class="table-goodsNum">发布的物品数量</th>  <!--发布的物品数量-->
+									<th class="table-password">用户等级</th>  <!--用户等级-->
+								</tr>
+							</thead>
+                            <!--下边是15条用户记录-->
+							<tbody>
+								<tr th:each="user,stat:${page.records}">
+									<td><input type="checkbox"></td>
+									<td th:text="${stat.count}"> </td>
+									<td>
+										<a href="#" th:text="${user.id}" 2345678901</a>    <!--这是ID-->
+									</td>
+									<th th:text="${user.getUsername()}"></th>    <!--姓名-->
+									<td th:text="${user.getQq()}">女</td>                 <!--这是qq-->
+									<td th:text="${user.getPhone()}">13889793454</td>              <!--这是电话-->
+									<td th:text="${user.goods_num}">浙江省杭州市西湖区留下街道288号</td> <!--发布的物品数量-->
+									<td th:text="${user.power}">limingjie211</td>          <!--用户等级-->
+									<td>
+										<div class="am-btn-toolbar">
+											<div class="am-btn-group am-btn-group-xs">
+												<button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+												<button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+											</div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="am-cf">
+							当前第[[${page.current}]]页   共[[${page.pages}]]页   共[[${page.total}]]条记录
+							<div class="am-fr">
+								<ul class="am-pagination">
+									<li th:class="${page.current == 1 ? 'am-disabled' : ''}">
+										<a th:href="@{user.html(pg=${page.current - 1})}">«</a>
+									</li>
+
+									<li th:class="${num == page.current ? 'am-active' : ''}" th:each="num:${#numbers.sequence(1,page.pages)}">
+										<a th:href="@{user.html(pg=${num})}" th:text="${num}">1</a>
+									</li>
+									<li th:class="${page.current == page.pages ? 'am-disabled' : ''}">\
+											<a th:href="@{user.html(pg=${page.current +1})}">»</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<hr>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

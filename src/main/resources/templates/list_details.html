@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title th:text="${goods.name}">iPad pro 11寸 256G/512G 插卡4G版</title>
+    <link rel="stylesheet" href="index/css/public.css">
+    <link rel="stylesheet" href="index/css/list_details.css">
+</head>
+<body>
+<header th:include="common/header" style="margin-bottom: 40px">
+</header>
+<div class="main">
+    <div class="main_header">
+        <div class="header_left">
+            <div class="user_card">
+                <img src="//wwc.alicdn.com/avatar/getAvatar.do?userNick=fushan_333&width=30&height=30&type=sns&_input_charset=UTF-8" alt="" class="user_img">
+                <a href="javascript:;" class="uaer_name" th:text="${sellUser.username}">fushan_333</a>
+                <div class="user_detail">
+                    <p>男</p>
+                    <p th:text="'注册时间：'+${sellUser.createAt}">注册时间：2018-09-12</p>
+                </div>
+            </div>
+        </div>
+        <div class="header_center">
+            <p th:text="${Msg}">2131231231231</p>
+        </div>
+        <div class="header_right">
+            <ul class="center_ul">
+                <li class="center_ul_li">
+                    <h5>宝贝浏览次数</h5>
+                    <span>1</span>
+                </li>
+                <li class="center_ul_li">
+                    <h5>商品发布时间</h5>
+                    <span th:text="${goods.startTime}">2019-07-09 13:11</span>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="main_body">
+        <div class="body_left">
+            <div class="left_top_img">
+                <div class="top_lg_img">
+                    <img class="bg_img" th:src="${imageList.get(0).getImgUrl()}" alt="">
+                </div>
+                <div class="top_sm_img">
+                    <ul class="top_sm_ul">
+                        <li th:each="image,stat:${imageList}" th:style="'display:' +${stat.index == 0 ? 'none':' '}" class="top_ul_li"><img class="sm_img" th:src="${image.imgUrl}" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="left_bottom_card">
+                <ul class="card_ul">
+                    <li class="card_li active"><a href="javascript:;" data-toggle="tab" data-target="content1">宝贝介绍</a></li>
+                    <li class="card_li"><a href="javascript:;" data-toggle="tab" data-target="content2">意向留言</a></li>
+                    <li class="card_li"><a href="javascript:;" data-toggle="tab" data-target="content3">安全保障</a></li>
+                </ul>
+                <div class="bottom_content">
+                    <div class="content1">
+                        <h2>宝贝介绍</h2>
+                        <p th:text="${goods.describle}">iPad pro 11寸 256G/512G 插卡4G版,全新</p>
+                    </div>
+<!--                    <div class="content2">-->
+<!--                        <h2>意向留言</h2>-->
+<!--                        <textarea name="" id="" cols="30" rows="10"></textarea>-->
+<!--                        <input type="text">-->
+<!--                        <input type="submit" value="提交">-->
+<!--                    </div>-->
+<!--                    <div class="content disabled">-->
+<!--                        <h2>安全保障</h2>-->
+<!--                        <p>请用户注意不要上当受骗，不要在本平台以外的场合进行金钱交易</p>-->
+<!--                    </div>-->
+                </div>
+            </div>
+        </div>
+        <div class="body_right">
+            <div class="top_part">
+                <table class="tab">
+                    <tr>
+                        <td colspan="2" th:text="${goods.name}">thinkpid笔记本电脑</td>
+                    </tr>
+                    <tr>
+                        <td>现&nbsp;&nbsp;&nbsp;价:</td>
+                        <td th:text="'￥'+${goods.realPrice}"></td>
+                    </tr>
+                    <tr>
+                        <td>转&nbsp;卖&nbsp;价&nbsp;:</td>
+                        <td th:text="${goods.price}">￥2530.00</td>
+                    </tr>
+                    <tr>
+                        <td>成&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;色&nbsp;:</td>
+                        <td>非全新</td>
+                    </tr>
+                    <tr>
+                        <td>QQ:</td>
+                        <td th:text="${sellUser.qq}">123123</td>
+                    </tr>
+                    <tr>
+                        <td>交易方式:</td>
+                    </tr>
+
+                </table>
+                <div>
+                    <a th:href="@{/addCarts(goodsid=${goods.id})}">收藏</a>
+                    <a th:href="@{/payone(id=${goods.id})}">立即购买</a>
+                </div>
+            </div>
+
+
+<!--          侧边其他闲置-->
+<!--            <div class="right_bottom_other idle-box other-idles" data-spm="2007.1000338.6" data-url="//2.taobao.com/itemref/more_onsale.htm?userNick=%D1%A9mail&amp;id=599337731904">-->
+<!--                <h4>卖家的其它闲置<span class="total">（8）</span></h4>-->
+<!--                <a href="//s.2.taobao.com/list/list.htm?usernick=雪mail" target="_blank" class="more">更多</a>-->
+<!--                <div class="entity">-->
+<!--                    <ul>-->
+<!--                        <li>-->
+<!--                            <div class="item-pic s-pic">-->
+<!--                                <a href="//2.taobao.com/item.htm?id=599523263638">-->
+<!--                                    <img src="//img.alicdn.com/bao/uploaded/i1/O1CN01KE6mKG264yDAQZhnv_!!0-fleamarket.jpg_80x80.jpg" alt="微星 E3M workstation v5主板">-->
+<!--                                </a>-->
+<!--                            </div>-->
+<!--                            <div class="item-info">-->
+<!--                                <p>-->
+<!--                                    <a href="//2.taobao.com/item.htm?id=599523263638" target="_blank">微星 E3M workstation v5主板 9成新以上</a>-->
+<!--                                </p>-->
+<!--                                <p class="price-block">-->
+<!--                                    <span class="price">-->
+<!--                                        <b>¥</b>-->
+<!--                                        <em>170.00</em>-->
+<!--                                    </span>-->
+<!--                                </p>-->
+<!--                            </div>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--            </div>-->
+        </div>
+    </div>
+</div>
+<footer th:include="common/footer"></footer>
+<script type="javascript">
+    document.onreadystatechange = function () {
+        if(document.readyState=="complete") {
+            alert('ok');
+        }
+    }
+    $(document).ready(function(){
+        alert("asdasd");
+    });
+</script>
+</body>
+</html>

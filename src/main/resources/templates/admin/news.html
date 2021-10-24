@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="res/css/amazeui.min.css" />
+		<link rel="stylesheet" href="res/css/admin.css" />
+	</head>
+
+	<body>
+		<div class="admin-content-body">
+			<div class="am-cf am-padding am-padding-bottom-0">
+				<div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">留言管理</strong><small></small></div>
+			</div>
+
+			<hr>
+
+			<div class="am-g">
+				<div class="am-u-sm-12 am-u-md-6">
+					<div class="am-btn-toolbar">
+						<div class="am-btn-group am-btn-group-xs">
+							<button type="button" class="am-btn am-btn-default"><span class="am-icon-plus"></span> 新增</button>  <!--这是新增按钮-->
+						</div>
+					</div>
+				</div>
+				<div class="am-u-sm-12 am-u-md-3">
+
+				</div>
+				<div class="am-u-sm-12 am-u-md-3">
+					<div class="am-input-group am-input-group-sm">
+						<input type="text" class="am-form-field">
+						<span class="am-input-group-btn">
+            <button class="am-btn am-btn-default" type="button">搜索</button>    <!--这是搜索按钮-->
+          </span>
+					</div>
+				</div>
+			</div>
+			<div class="am-g">
+				<div class="am-u-sm-12">
+					<form class="am-form">
+						<table class="am-table am-table-striped am-table-hover table-main">
+							<thead>
+								<tr>
+									<th class="table-check"><input type="checkbox"></th>
+									<th class="table-id">ID</th>                             <!--这是ID标签-->
+									<th class="table-title">内容</th>                        <!--这是内容标签-->
+									<th class="table-type">发送方ID</th>                      <!--这是发送方标签-->
+									<th class="table-author am-hide-sm-only">接收方ID</th>   <!--这是接收方标签-->
+									<th class="table-set">操作</th>                          <!--这是操作标签-->
+								</tr>
+							</thead>
+                            <!--下方为留言内容-->
+							<tbody>
+                            
+								<tr>
+									<td><input type="checkbox"></td>
+									<td>09876543211</td>                                     <!--这是ID-->
+									<td>
+										<a href="#">卖家您好</a>                               <!--这是内容-->
+									</td>
+									<td>45678909876</td>                                       <!--这是发送方-->
+									<td class="am-hide-sm-only">56789098732</td>                <!--这是接收方-->
+									<td>
+										<div class="am-btn-toolbar">
+											<div class="am-btn-group am-btn-group-xs">
+												<button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>                                                 <!--这是编辑按钮-->
+												<button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>                                                         <!--这是删除按钮-->
+											</div>
+										</div>
+									</td>
+								</tr>
+								
+                                
+								<tr>
+									<td><input type="checkbox"></td>
+									<td>09876544211</td>
+									<td>
+										<a href="#">商品已经发件</a>
+									</td>
+									<td>45678908876</td>
+									<td class="am-hide-sm-only">56782098732</td>
+									<td>
+										<div class="am-btn-toolbar">
+											<div class="am-btn-group am-btn-group-xs">
+												<button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+												<button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+											</div>
+										</div>
+									</td>
+								</tr>
+								
+								<tr>
+									<td><input type="checkbox"></td>
+									<td>09876544211</td>
+									<td>
+										<a href="#">商品已经发件</a>
+									</td>
+									<td>45678908876</td>
+									<td class="am-hide-sm-only">56782098732</td>
+									<td>
+										<div class="am-btn-toolbar">
+											<div class="am-btn-group am-btn-group-xs">
+												<button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+												<button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+											</div>
+										</div>
+									</td>
+								</tr>
+								
+								<tr>
+									<td><input type="checkbox"></td>
+									<td>09876544211</td>
+									<td>
+										<a href="#">商品已经发件</a>
+									</td>
+									<td>45678908876</td>
+									<td class="am-hide-sm-only">56782098732</td>
+									<td>
+										<div class="am-btn-toolbar">
+											<div class="am-btn-group am-btn-group-xs">
+												<button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+												<button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+											</div>
+										</div>
+									</td>
+								</tr>
+								
+								<tr>
+									<td><input type="checkbox"></td>
+									<td>09876544211</td>
+									<td>
+										<a href="#">商品已经发件</a>
+									</td>
+									<td>45678908876</td>
+									<td class="am-hide-sm-only">56782098732</td>
+									<td>
+										<div class="am-btn-toolbar">
+											<div class="am-btn-group am-btn-group-xs">
+												<button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+												<button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox"></td>
+									<td>09876544211</td>
+									<td>
+										<a href="#">商品已经发件</a>
+									</td>
+									<td>45678908876</td>
+									<td class="am-hide-sm-only">56782098732</td>
+									<td>
+										<div class="am-btn-toolbar">
+											<div class="am-btn-group am-btn-group-xs">
+												<button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+												<button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox"></td>
+									<td>09876544211</td>
+									<td>
+										<a href="#">商品已经发件</a>
+									</td>
+									<td>45678908876</td>
+									<td class="am-hide-sm-only">56782098732</td>
+									<td>
+										<div class="am-btn-toolbar">
+											<div class="am-btn-group am-btn-group-xs">
+												<button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+												<button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+											</div>
+										</div>
+									</td>
+								</tr>
+								
+								<tr>
+									<td><input type="checkbox"></td>
+									<td>99976544211</td>
+									<td>
+										<a href="#">商品已经卖掉啦</a>
+									</td>
+									<td>40909908876</td>
+									<td class="am-hide-sm-only">66666098732</td>
+									<td>
+										<div class="am-btn-toolbar">
+											<div class="am-btn-group am-btn-group-xs">
+												<button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+												<button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+											</div>
+										</div>
+									</td>
+								</tr>
+								
+								<tr>
+									<td><input type="checkbox"></td>
+									<td>00000544211</td>
+									<td>
+										<a href="#">在吗</a>
+									</td>
+									<td>45678909076</td>
+									<td class="am-hide-sm-only">44482098732</td>
+									<td>
+										<div class="am-btn-toolbar">
+											<div class="am-btn-group am-btn-group-xs">
+												<button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+												<button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+											</div>
+										</div>
+									</td>
+								</tr>
+								
+								<tr>
+									<td><input type="checkbox"></td>
+									<td>55556544211</td>
+									<td>
+										<a href="#">可以再便宜些吗</a>
+									</td>
+									<td>45448908811</td>
+									<td class="am-hide-sm-only">59009098732</td>
+									<td>
+										<div class="am-btn-toolbar">
+											<div class="am-btn-group am-btn-group-xs">
+												<button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+												<button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox"></td>
+									<td>34576544211</td>
+									<td>
+										<a href="#">宝贝很不错呦</a>
+									</td>
+									<td>45678222876</td>
+									<td class="am-hide-sm-only">11182098732</td>
+									<td>
+										<div class="am-btn-toolbar">
+											<div class="am-btn-group am-btn-group-xs">
+												<button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+												<button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+											</div>
+										</div>
+									</td>
+								</tr>
+								
+								<tr>
+									<td><input type="checkbox"></td>
+									<td>67876544211</td>
+									<td>
+										<a href="#">裙子很好看</a>
+									</td>
+									<td>12348908876</td>
+									<td class="am-hide-sm-only">56767098732</td>
+									<td>
+										<div class="am-btn-toolbar">
+											<div class="am-btn-group am-btn-group-xs">
+												<button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+												<button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+											</div>
+										</div>
+									</td>
+								</tr>
+								
+								
+							</tbody>
+						</table>
+						<div class="am-cf">
+							共 15 条记录
+							<div class="am-fr">
+								<ul class="am-pagination">
+									<li class="am-disabled">
+										<a href="#">«</a>
+									</li>
+									<li class="am-active">
+										<a href="#">1</a>
+									</li>
+									<li>
+										<a href="#">2</a>
+									</li>
+									<li>
+										<a href="#">3</a>
+									</li>
+									<li>
+										<a href="#">4</a>
+									</li>
+									<li>
+										<a href="#">5</a>
+									</li>
+									<li>
+										<a href="#">»</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<hr>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

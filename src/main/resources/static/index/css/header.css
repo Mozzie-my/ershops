@@ -1,0 +1,303 @@
+#header{
+    top: 0;
+    position: fixed;/*这里一定要设置*/
+    z-index: 999999;
+    right: 0;
+    background: #02b5cc;
+    height: 48px;
+    width: 100%;
+}
+.menu_bar{
+    height: 48px;
+    text-align: center;
+}
+/* 导航栏左边菜单 */
+.menu_bar .menu_left{
+    line-height: 26px;
+    margin-top:15px;
+}
+.menu_left .menu_logo{
+    float: left;
+    margin-right: 10px;
+    margin-top:-3px;
+    width: 300px;
+    height: 35px;
+    font-size:34px;
+    color: #fff;
+}
+.menu_left .item{
+    font-weight: bold;
+    position: relative;
+    float: left;
+    line-height: 28px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+}
+.menu_left .item:hover,.menu_left>ul>li>ul>li a:hover{
+    color:#0a8494;
+}
+a{
+    text-decoration: none;
+}
+.menu_left>ul>li>ul>li a{
+    font-size: 12px;
+    color: #333;
+}
+ul{
+    list-style: none;
+}
+div>ul>li{
+    float:left;
+    width:75px; height:23px;
+    border-width:10px 1px 10px 0;
+    text-align:center;
+    line-height:15px;
+    position:relative;
+}
+div>ul>li:nth-child(1),div>ul>li:nth-child(2){
+    width:45px;
+}
+div>ul>.item{
+    color: #0a8494;
+}
+div>ul>li:nth-child(2)>ul,div>ul>li:nth-child(3)>ul,div>ul>li:nth-child(4)>ul,div>ul>li:nth-child(6)>ul,div>ul>li:nth-child(7)>ul{
+    top: 33px;
+    height: 0px;
+    opacity: 0;
+    overflow: hidden;
+    transition: all .5s linear;
+}
+div>ul>li>ul{
+    background-color: #fff; 
+    width: 80px; 
+    border: 1px solid rgb(239,239,239);
+    border-top: 0;
+    position: absolute;
+    left: 0;
+}
+div>ul>li:nth-child(2)>ul>li:first-child,div>ul>li:nth-child(3)>ul>li:first-child,div>ul>li:nth-child(4)>ul>li:first-child,div>ul>li:nth-child(6)>ul>li:first-child,div>ul>li:nth-child(7)>ul>li:first-child{
+    height: 23px;
+}
+
+div>ul>li>ul>li{
+    display: block;
+    background-color: #fff;
+    text-align: left;
+    padding-left: 18px;
+    width: 60px;
+    height: 25px;
+    line-height: 25px;
+}
+div>ul>li:nth-child(2):hover>ul{
+    opacity:1;
+    height:80px;
+}
+div>ul>li:nth-child(3):hover>ul{
+    opacity:1;
+    height:60px;
+}
+div>ul>li:nth-child(4):hover>ul{
+    opacity:1;
+    height:80px;
+}
+div>ul>li:nth-child(6):hover>ul{
+    opacity:1;
+    height:180px;
+}
+div>ul>li:nth-child(7):hover>ul{
+    opacity:1;
+    height:80px;
+}
+
+
+/* 导航栏右边登录注册 */
+.menu_bar .menu_right{
+    float: right;
+    margin-left: 23px;
+    margin-top: -8px;
+}
+.menu_right .login_reg{
+    display: inline-block;
+    line-height: 37px;
+}
+.login_reg .login{
+    padding: 0 15px;
+    height: 32px;
+    line-height: 32px;
+    margin-right: 2px;
+}
+.btn{
+    display: inline-block;
+    border-radius: 2px;
+    font-size: 14px;
+    background: #fafafa;
+    border: 1px solid #02b5cc;
+    color: #0a8494;
+    text-align: center;
+    box-shadow: 0 0 0 transparent;
+}
+.login_reg .register{
+    padding: 0 15px;
+    height: 32px;
+    line-height: 32px;
+}
+.login_reg .rbtn{
+    background: #0a8494;
+    color: #fff;
+}
+.login_reg .login:hover{
+    opacity: 0.9;
+}
+.login_reg .register:hover{
+    opacity: 0.9;
+}
+/* 导航栏中间搜索框 */
+.menu_bar .menu_center{
+    float: right;
+    width: 15%;
+    overflow: hidden;
+    position: relative;
+    height: 32px;
+    margin-top: -8px;
+    font-size: 14px;
+    color: #bbb;
+    background: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+}
+.menu_center .search{
+    border: 0;
+    display: inline-block;
+    background-color: transparent;
+    height: 35px;
+    width: 80%;
+}
+.menu_center .menu_wrap{
+    width: 80%;
+    height: 40px;
+    background: #fff;
+    display: block;
+}
+.center_input{
+    width: 103%;
+    display: inline-block;
+}
+.search_btn{
+    display: inline-block;
+    font-size: 14px;
+    width: 69px;
+    padding: 7px 0;
+    height: 19px;
+    background: #0a8494;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 0 0 transparent;
+}
+.search_btn:hover{
+    opacity: 0.8;
+}
+/* 登录注册弹出框 */
+.alert{
+    color: #333;
+    background: #fff;
+    position: fixed;
+    border-radius: 5px;
+}
+.alert>.close{
+    float:right;
+    font-weight:bold;
+    opacity:.5;
+    cursor:pointer;
+    font-size: 20px;
+    margin-top: 2px;
+    margin-right: 6px;
+}
+.alert>.close:hover{opacity:1}
+.alert>.text{
+    width: 270px;
+    height: 320px;
+    padding: 15px;
+}
+.fade{ /*定义淡入淡出动画的初始状态,常驻元素*/
+    width: 300px;
+    height: 350px;
+    /* top: 30%;
+    left: 50%;
+    margin-top: -110px;
+    margin-left: -210px; */
+    float: left;
+    margin-top: 1%;
+    margin-left: 42%;
+    /* display: none; */
+    opacity: 0;
+}
+#header>.in{ /*定义淡入淡出动画的结束状态*/
+    width: 300px;
+    height: 350px;
+    top: 30%;
+    left: 55%;
+    margin-top: -110px;
+    margin-left: -210px;
+    opacity: 1;
+    /* display: block; */
+    box-shadow: 0 0 6px #aaa;
+}
+.alert h2{
+    font-size: 23px;
+    margin-bottom: 15px;
+    display: inline-block;
+    margin-right: 20px;
+}
+.alert h3{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.alert .text_word{
+    height: 30px;
+    width: 300px;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.alert input{
+    display: inline-block;
+    height: 30px;
+    width: 250px;
+    margin-left: 5px;
+    margin-bottom: 15px;
+    padding-left: 5px;
+    font-size: 15px;
+}
+.alert .text_login{
+    height: 40px;
+    line-height: 40px;
+    display: block;
+    width: 50px;
+    background: #0a8494;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 25px;
+    margin-left: 53px;
+}
+.alert .text_ul{
+    height: 30px;
+}
+.alert .text_li{
+    width: 60px;
+    font-size: 15px;
+    margin: 0 12%;
+}
+.alert li a,.alert .text_help a,.alert .text_r{
+    display: inline-block;
+    color: #333;
+}
+.alert .text_r a:hover{
+    color: red;
+}
+.alert .text_help{
+    float: right;
+}
+.alert .text_help a:nth-child(1){
+    margin-right: 10px;
+}
